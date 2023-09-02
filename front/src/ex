@@ -1,0 +1,63 @@
+import {
+  GoogleReCaptchaProvider,
+  useGoogleReCaptcha
+} from 'react-google-recaptcha-v3';
+import { useCallback } from 'react';
+
+////
+
+const [recaptchaToken, setRecaptchaToken] = useState('');
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
+  const handleReCaptchaVerify = useCallback(async () => {
+    if (!executeRecaptcha) {
+      console.log('Execute reCAPTCHA not yet available');
+      return;
+    }
+
+    try {
+      const token = await executeRecaptcha('yourAction');
+      setRecaptchaToken(token); // 토큰을 상태로 저장
+console.log(token);
+    } catch (error) {
+      console.error('reCAPTCHA execution error:', error);
+    }
+
+  }, [executeRecaptcha]);
+
+
+  const sendTokenToServer = async (callback) => {
+    try {
+      const response = await axios.post('http://localhost:3001/verify-recaptcha', {
+        recaptchaToken, // 토큰을 직접 전달합니다.
+      });
+      console.log(recaptchaToken);
+      if (response.status === 200) {
+        const data = response.data;
+        console.log(data);
+        handleReCaptchaVerify();
+  
+        // 인증이 성공하면 콜백 함수 호출
+        if (typeof callback === 'function') {
+          callback();
+        }
+      } else {
+        console.error('reCAPTCHA verification failed');
+      }
+    } catch (error) {
+      console.error('Error sending reCAPTCHA token to server:', error);
+    }
+  };
+
+  useEffect(() => {
+    handleReCaptchaVerify();
+  }, [handleReCaptchaVerify]);
+
+
+  ///
+
+  onClick={() => {
+  sendTokenToServer(() => {
+    handleSignup();
+  });
+}}
