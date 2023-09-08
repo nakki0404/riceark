@@ -1,0 +1,6 @@
+@media (max-width: 500px) {
+  .responsive-table th:nth-child(2),
+  .responsive-table td:nth-child(2) {
+    display: none;
+  }
+}

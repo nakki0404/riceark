@@ -1,0 +1,16 @@
+.BottomNav2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  order: 1; /* Change the order to reverse the placement */
+}
+
+.center {
+  order: 2; /* Change the order to reverse the placement */
+}
+
+.right {
+  order: 3; /* Change the order to reverse the placement */
+}

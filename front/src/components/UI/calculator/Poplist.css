@@ -1,0 +1,20 @@
+.MyComponent-container {
+  display: flex;
+}
+
+.panel {
+  flex: 1;
+  border: 1px solid black;
+  text-align: center;
+  padding: 20px;
+}
+.poplist-container {
+  height: 800px; /* 원하는 높이로 조절 */
+  overflow-y: auto; /* 내용이 넘칠 경우 스크롤 표시 */
+}
+@media (max-width: 500px) {
+  .responsive-table10 th:nth-child(3),
+  .responsive-table10 td:nth-child(3) {
+    display: none;
+  }
+}

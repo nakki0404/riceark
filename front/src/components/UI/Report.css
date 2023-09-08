@@ -1,0 +1,7 @@
+@media (max-width: 780px) {
+  .responsive-table3 th:nth-child(1),
+  .responsive-table3 td:nth-child(1) {
+    display: none;
+    min-width: auto;
+  }
+}

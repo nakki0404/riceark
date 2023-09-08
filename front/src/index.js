@@ -1,27 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-import { Provider } from 'react-redux';
-import store from './store';
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import UpStore from "./components/notUI/UpStore";
 
-import {
-  GoogleReCaptchaProvider,
-  useGoogleReCaptcha
-} from 'react-google-recaptcha-v3';
+// import {
+//   GoogleReCaptchaProvider,
+//   useGoogleReCaptcha,
+// } from "react-google-recaptcha-v3";
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-<GoogleReCaptchaProvider reCaptchaKey="6Lft39snAAAAANkk0UBF-UcAWL_mF4jiEhiludil">
-        <Provider store={store}>
+  // <GoogleReCaptchaProvider reCaptchaKey="6Lft39snAAAAANkk0UBF-UcAWL_mF4jiEhiludil">
+  <Provider store={store}>
+    <UpStore />
+
     <App />
-    </Provider>
-    </GoogleReCaptchaProvider>
-  </React.StrictMode>
+  </Provider>
+  // </GoogleReCaptchaProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

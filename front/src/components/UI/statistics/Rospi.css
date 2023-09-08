@@ -1,0 +1,13 @@
+.sections-container {
+  display: flex;
+  padding: 20px;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.calculator-section5 {
+  min-width: auto;
+  /* flex: 1; */
+  padding: 10px;
+  box-sizing: border-box;
+}

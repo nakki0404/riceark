@@ -88,7 +88,7 @@ const loadjem = async () => {
     }
     
     const nonNullCount = countNonNullElements(newlist);
-    const avg=(sum/nonNullCount/81).toFixed(0);
+    const avg=(sum/nonNullCount);
 
     return avg;    
     
@@ -136,7 +136,7 @@ async function jem()
         "Icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_9_46.png",
         "BundleCount": 1,
         "TradeRemainCount": null,
-        "YDayAvgPrice": avg,
+        "YDayAvgPrice": (avg/3/3/3/3).toFixed(1),
         "RecentPrice": 1,
         "CurrentMinPrice": 1,
         "__v": 0
@@ -148,7 +148,7 @@ async function jem()
         "Icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_9_46.png",
         "BundleCount": 1,
         "TradeRemainCount": null,
-        "YDayAvgPrice": avg*3,
+        "YDayAvgPrice": (avg/3/3/3).toFixed(1),
         "RecentPrice": 1,
         "CurrentMinPrice": 1,
         "__v": 0
@@ -161,7 +161,7 @@ async function jem()
         "Icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_9_46.png",
         "BundleCount": 1,
         "TradeRemainCount": null,
-        "YDayAvgPrice": avg*3*3,
+        "YDayAvgPrice": (avg/3/3).toFixed(1),
         "RecentPrice": 1,
         "CurrentMinPrice": 1,
         "__v": 0
@@ -174,7 +174,7 @@ async function jem()
         "Icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_9_46.png",
         "BundleCount": 1,
         "TradeRemainCount": null,
-        "YDayAvgPrice": avg*3*3*3,
+        "YDayAvgPrice": (avg/3).toFixed(1),
         "RecentPrice": 1,
         "CurrentMinPrice": 1,
         "__v": 0
@@ -187,7 +187,7 @@ async function jem()
         "Icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_9_46.png",
         "BundleCount": 1,
         "TradeRemainCount": null,
-        "YDayAvgPrice": avg*3*3*3*3,
+        "YDayAvgPrice": avg.toFixed(1),
         "RecentPrice": 1,
         "CurrentMinPrice": 1,
         "__v": 0

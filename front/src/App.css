@@ -1,0 +1,40 @@
+.top-navbar-container {
+  z-index: 2;
+  position: fixed; /* 화면에 고정된 위치 */
+  top: 0; /* 화면 하단에 배치 */
+  left: 0; /* 왼쪽 정렬 (선택사항) */
+  width: 100%; /* 화면 너비에 맞춤 */
+  background-color: #333; /* 배경색을 원하는 색상으로 설정 */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: 0;
+  background-color: #333;
+  /* padding: 10px; */
+}
+.BottomNav2 {
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  position: fixed; /* 화면에 고정된 위치 */
+  bottom: 0; /* 화면 하단에 배치 */
+  left: 0; /* 왼쪽 정렬 (선택사항) */
+  width: 100%; /* 화면 너비에 맞춤 */
+  background-color: #333; /* 배경색을 원하는 색상으로 설정 */
+  color: #fff; /* 텍스트 색상을 원하는 색상으로 설정 */
+  /* padding: 10px; 바닥 푸터의 여백 설정 (선택사항) */
+  /* 필요에 따라 다른 스타일 속성을 추가할 수 있습니다. */
+}
+.body {
+  z-index: 1;
+  top: 0; /* 화면 하단에 배치 */
+  left: 0;
+  padding-top: 60px;
+}
+
+@media (min-width: 780px) {
+  .body {
+    padding-top: 80px;
+  }
+}

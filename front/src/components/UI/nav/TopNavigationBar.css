@@ -1,0 +1,21 @@
+/* TopNavigationBar.css */
+.top-navbar {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+}
+
+.top-navbar a {
+  color: #fff; /* Set the link text color */
+  text-decoration: none; /* Remove underline */
+}
+
+@media (max-width: 780px) {
+  .top-navbartext {
+    display: none;
+  }
+
+  .top-navbar {
+    padding: 0px;
+  }
+}

@@ -1,0 +1,17 @@
+.sections-container2 {
+  display: flex;
+  padding: 20px;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.calculator-section2 {
+  min-width: 500px;
+  padding: 10px;
+}
+@media (max-width: 780px) {
+  .calculator-section2 {
+    padding: 10px;
+    min-width: auto;
+  }
+}
