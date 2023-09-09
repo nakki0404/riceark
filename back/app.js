@@ -170,18 +170,16 @@ app.get("/api/howmany", async (req, res) => {
   const day = String(currentDate.getDate()).padStart(2, "0"); // 일을 두 자리로 표시
 
   const formattedDate = `${year}-${month}-${day}`;
-  console.log(formattedDate);
+  // console.log(formattedDate);
   const visited = await Visited.find({ Date: formattedDate });
-  console.log(visited);
+  // console.log(visited);
   res.json(visited);
 });
 
 app.post("/api/count", async (req, res) => {
   try {
     const visitors = req.headers.coo;
-    console.log(visitors);
     const existingVisitor = await Visitor.findOne({ Name: visitors });
-
     if (!existingVisitor) {
       const currentDate = new Date();
       const year = currentDate.getFullYear();
@@ -189,7 +187,7 @@ app.post("/api/count", async (req, res) => {
       const day = String(currentDate.getDate()).padStart(2, "0"); // 일을 두 자리로 표시
       const formattedDate = `${year}-${month}-${day}`;
       await Visitor.insertMany({ Name: visitors });
-      await Visited.updateMany(
+      await Visited.updateOne(
         { Date: formattedDate },
         { $inc: { todayTotal: 1 } }
       );
@@ -394,14 +392,16 @@ function myFunction() {
   const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // 월을 두 자리로 표시
   const day = String(currentDate.getDate()).padStart(2, "0"); // 일을 두 자리로 표시
   const formattedDate = `${year}-${month}-${day}`;
+
+  // console.log(currentDate);
   // 실행하려는 작업을 이 함수 안에 구현합니다.
   const existingVisited = Visited.findOne({ Date: formattedDate });
   if (!existingVisited) {
-    Visited.insertMany({ Date: formattedDate, todayTotal: 0 });
+    Visited.create({ Date: formattedDate, todayTotal: 0 });
     update.fetchDataAndUpdate();
   }
 }
-
+myFunction();
 // 함수를 매일 오전 00시에 실행하기 위한 시간 계산
 const now = new Date();
 const tomorrow = new Date(now);
@@ -422,9 +422,9 @@ setInterval(function () {
   myFunction();
 }, interval);
 
-const PORT = 3001;
-app.listen(PORT, () => {
-  console.log(`Express server is running on port ${PORT}`);
-});
+// const PORT = 3001;
+// app.listen(PORT, () => {
+//   console.log(`Express server is running on port ${PORT}`);
+// });
 
 module.exports = app;
