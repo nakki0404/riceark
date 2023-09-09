@@ -117,21 +117,22 @@ function Report({ reports, deleteReport }) {
               value={Writing.Body || ""}
             />
           </Form.Group>
+          <Form.Group>
+            <Form.Control
+              placeholder={`${pass}` + "를 입력해주세요 자동입력방지"}
+              onChange={(e) => fillForm(e.target.value)}
+              value={form}
+            />
+          </Form.Group>
+          <br />
+          <div className="text-center">
+            <Button variant="warning" onClick={() => handleLogin(form)}>
+              제출
+            </Button>
+          </div>
+          <br />
         </Form>
-        <div className="text-center">
-          <Button variant="warning" onClick={() => handleLogin(form)}>
-            제출
-          </Button>
-        </div>
-        <br />
-        <Form.Group>
-          <Form.Control
-            placeholder={`${pass}` + "를 입력해주세요 자동입력방지"}
-            onChange={(e) => fillForm(e.target.value)}
-            value={form}
-          />
-        </Form.Group>
-        <br />
+
         <Table striped bordered hover className="responsive-table3">
           <thead>
             <tr>

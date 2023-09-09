@@ -18,7 +18,7 @@ const BottomNav = () => {
   return (
     <div className="BottomNav2">
       <div className="left">Total {total}</div>
-      <div className="center">업데이트 주기 24시간</div>
+      <div className="center">매일 00시 업데이트</div>
       <div className="right">Today {today}</div>
     </div>
   );

@@ -370,6 +370,14 @@ const MyComponent = ({ items, trade_datas, lists, addList, token }) => {
           </Form.Group>
         </div>
         <br />
+        <Form.Group>
+          <Form.Control
+            placeholder={`${pass}` + "를 입력해주세요 자동입력방지"}
+            onChange={(e) => fillForm(e.target.value)}
+            value={form}
+          />
+        </Form.Group>
+        <br />
         <Container>
           <Row>
             <Col>
@@ -379,7 +387,7 @@ const MyComponent = ({ items, trade_datas, lists, addList, token }) => {
                 variant="dark"
                 onClick={handleClearTable}
               >
-                테이블 비우기
+                비우기
               </Button>
             </Col>
             <Col>
@@ -397,14 +405,7 @@ const MyComponent = ({ items, trade_datas, lists, addList, token }) => {
           </Row>
         </Container>
       </Form>
-      <br />
-      <Form.Group>
-        <Form.Control
-          placeholder={`${pass}` + "를 입력해주세요 자동입력방지"}
-          onChange={(e) => fillForm(e.target.value)}
-          value={form}
-        />
-      </Form.Group>
+
       <br />
 
       <div>설명</div>
