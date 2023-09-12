@@ -18,7 +18,7 @@
 
 
 ### 마켓 거래 통계
-성장재료들의 거래 통계를 알 수 있습니다.
+성장재료들의 거래소 거래 통계입니다.
 
 <img src="https://github.com/nakki0404/riceark/assets/141347738/6ae779bb-1e7a-49a9-a750-cba5d98056d4.png" width="400" height="200"/>
 
