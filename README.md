@@ -1,7 +1,9 @@
 # riceark
 로스트아크 api 중 거래소 정보를 기반으로 기능이 제공되는 웹 애플리케이션 입니다.
 
-![flow](https://github.com/nakki0404/riceark/assets/141347738/16dbf666-d641-491c-9fe9-35e8397638e8)
+<img src="https://github.com/nakki0404/riceark/assets/141347738/16dbf666-d641-491c-9fe9-35e8397638e8.png" width="200" height="400"/>
+
+
 
 ### 재화계산기
 선택된 재화를 전일 평균으로 계산해줍니다.
